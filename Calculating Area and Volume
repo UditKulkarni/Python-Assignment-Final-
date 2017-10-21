@@ -47,3 +47,42 @@ def area(shape):
 
 def volume(shape):
     shape.volume()
+
+#-----------------------------Start of Program----------------------------
+while True:
+
+
+
+    user_input = int(input("What would you like to solve for (1: Rectangle, 2:Square, 3: Circle): "))
+
+
+
+    if user_input == 1:
+
+        x = int(input("Enter length: "))
+
+        y = int(input("Enter width: "))
+
+        area(rect(x,y))
+
+
+
+    elif user_input == 2:
+
+        x = int(input("Enter length: "))
+
+        area(sqre(x))
+
+
+
+    elif user_input == 3:
+
+        x = int(input("Enter radius: "))
+
+        area(circ(x))
+
+
+
+    else:
+
+        break
