@@ -38,3 +38,12 @@ class circ():
 
     def volume(self):
         print ("The area is",((4/3)* 3.14 * self.radius**3), "cm^3")
+
+
+
+#--------------------------Polymorphism---------------------------------
+def area(shape):
+    shape.area()
+
+def volume(shape):
+    shape.volume()
