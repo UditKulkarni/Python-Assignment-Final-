@@ -48,41 +48,76 @@ def area(shape):
 def volume(shape):
     shape.volume()
 
-#-----------------------------Start of Program----------------------------
-while True:
+#--------------------------Program Definitions---------------------------
 
-
+def area_calc():
 
     user_input = int(input("What would you like to solve for (1: Rectangle, 2:Square, 3: Circle): "))
-
-
 
     if user_input == 1:
 
         x = int(input("Enter length: "))
-
         y = int(input("Enter width: "))
-
-        area(rect(x,y))
-
-
+        z = None
+        area(rect(x,y,z))
 
     elif user_input == 2:
 
         x = int(input("Enter length: "))
-
         area(sqre(x))
 
+    elif user_input == 3:
+
+        x = int(input("Enter radius: "))
+        area(circ(x))
+
+    else:
+
+         print("Invalid input, please try again")
+
+
+
+def vol_calc():
+
+    user_input = int(input("What would you like to solve for (1: Rectangular prism, 2:Cube, 3: Sphere): "))
+
+    if user_input == 1:
+
+        x = int(input("Enter length: "))
+        y = int(input("Enter width: "))
+        z = int(input("Enter height: "))
+        volume(rect(x,y,z))
+
+    elif user_input == 2:
+
+        x = int(input("Enter length: "))
+        volume(sqre(x))
 
 
     elif user_input == 3:
 
         x = int(input("Enter radius: "))
-
-        area(circ(x))
-
-
+        volume(circ(x))
 
     else:
+         print("Invalid input, please try again")
+
+
+#-------------------Start of Program-----------------------------
+
+while True:
+
+    user_input = int(input("What would you like to solve for (1: Area, 2:Volume, 0: Quit): "))
+
+    if user_input == 1:
+        area_calc()
+
+    elif user_input == 2:
+        vol_calc()
+
+    elif user_input == 0:
 
         break
+
+    else:
+        print("Invalid input, please try again")
