@@ -51,73 +51,88 @@ def volume(shape):
 #--------------------------Program Definitions---------------------------
 
 def area_calc():
+    while True:
+        try:
 
-    user_input = int(input("What would you like to solve for (1: Rectangle, 2:Square, 3: Circle): "))
+            user_input = input("What would you like to solve for (1: Rectangle, 2:Square, 3: Circle): ")
+            user_input = int(user_input)
 
-    if user_input == 1:
+            if user_input == 1:
+                x = input("Enter length: ")
+                x = int(x)
+                y = input("Enter width: ")
+                y = int(y)
+                z = None
+                area(rect(x,y,z))
+                break
 
-        x = int(input("Enter length: "))
-        y = int(input("Enter width: "))
-        z = None
-        area(rect(x,y,z))
+            elif user_input == 2:
+                x = input("Enter length: ")
+                x = int(x)
+                area(sqre(x))
+                break
 
-    elif user_input == 2:
+            elif user_input == 3:
+                x = input("Enter radius: ")
+                x = float(x)
+                area(circ(x))
+                break
 
-        x = int(input("Enter length: "))
-        area(sqre(x))
-
-    elif user_input == 3:
-
-        x = int(input("Enter radius: "))
-        area(circ(x))
-
-    else:
-
-         print("Invalid input, please try again")
-
+        except ValueError:
+            print ("Plese enter a valid integer!")
 
 
 def vol_calc():
 
-    user_input = int(input("What would you like to solve for (1: Rectangular prism, 2:Cube, 3: Sphere): "))
+    while True:
 
-    if user_input == 1:
+        try:
 
-        x = int(input("Enter length: "))
-        y = int(input("Enter width: "))
-        z = int(input("Enter height: "))
-        volume(rect(x,y,z))
+            user_input = input("What would you like to solve for (1: Rectangular prism, 2:Cube, 3: Sphere): ")
+            user_input = int(user_input)
+            if user_input == 1:
+                x = input("Enter length: ")
+                x = int(x)
+                y = input("Enter width: ")
+                y = int(y)
+                z = input("Enter height: ")
+                z = int(z)
+                volume(rect(x,y,z))
+                break
 
-    elif user_input == 2:
+            elif user_input == 2:
+                x = input("Enter length: ")
+                x = int(x)
+                volume(sqre(x))
+                break
 
-        x = int(input("Enter length: "))
-        volume(sqre(x))
+            elif user_input == 3:
+                x = input("Enter radius: ")
+                x = int(x)
+                volume(circ(x))
+                break
 
+        except ValueError:
+            print ("Plese enter a valid integer!")
 
-    elif user_input == 3:
-
-        x = int(input("Enter radius: "))
-        volume(circ(x))
-
-    else:
-         print("Invalid input, please try again")
 
 
 #-------------------Start of Program-----------------------------
 
 while True:
+    try:
+        user_input = input("What would you like to solve for (1: Area, 2:Volume, 0: Quit): ")
+        user_input = int(user_input)
+        if user_input == 1:
+            area_calc()
 
-    user_input = int(input("What would you like to solve for (1: Area, 2:Volume, 0: Quit): "))
+        elif user_input == 2:
+            vol_calc()
 
-    if user_input == 1:
-        area_calc()
+        elif user_input == 0:
+            break
+        else:
+            print("Number not in range, Try again. ")
 
-    elif user_input == 2:
-        vol_calc()
-
-    elif user_input == 0:
-
-        break
-
-    else:
+    except ValueError:
         print("Invalid input, please try again")
